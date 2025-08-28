@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movify - Votre nouvelle expérience cinéma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========================= SECTION 1: NAVBAR ========================= -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">Movify</a>
+            <nav>
+                <a href="#" id="loginBtn" class="navbar-login">Login</a>
+                <a href="#" id="signupBtn" class="navbar-signup">Sign in</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================= SECTION 2: Movies Slider ================= -->
+        <section class="hero-carousel">
+            <div class="carousel-container" id="carousel-container">
+                <!-- Movie slides will be injected here with JavaScript.(script.js)-->
+            </div>
+            <button class="carousel-arrow prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-arrow next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </section>
+
+
+    <!-- ======================== MODAL DE CONNEXION/INSCRIPTION ======================== -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container">
+                <div class="form-toggle">
+                    <button id="showLoginBtn" class="active">Connexion</button>
+                    <button id="showRegisterBtn">Inscription</button>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <h2>Se connecter</h2>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Mot de passe" required>
+                    <button type="submit">Connexion</button>
+                </form>
+
+                <form id="registerForm" class="auth-form" style="display: none;">
+                    <h2>Créer un compte</h2>
+                    <input type="text" placeholder="Nom d'utilisateur" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Mot de passe" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
