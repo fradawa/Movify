@@ -358,37 +358,6 @@ body {
     transform: rotate(90deg); /* Animation de rotation au survol */
 }
 
-/* Le sélecteur de formulaire est plus intégré et stylisé. */
-.form-toggle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    background-color: #0c0c0c; /* Fond assorti au body */
-    border-radius: 30px;
-    padding: 6px;
-    border: 1px solid var(--border-color);
-}
-
-.form-toggle button {
-    background: transparent;
-    border: none;
-    color: var(--light-text);
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 25px;
-    flex: 1;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Transition plus douce */
-}
-
-/* Le bouton actif a un fond dégradé pour correspondre au thème. */
-.form-toggle button.active {
-    background: var(--primary-gradient);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
-}
-
 .auth-form h2 {
     text-align: center;
     margin-bottom: 25px;
@@ -439,4 +408,68 @@ body {
 .auth-form button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+/* Styles for Google Button */
+.auth-form .google-btn {
+    background: #fff;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    padding: 14px;
+    font-size: 1rem;
+}
+
+.auth-form .google-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(0); /* Override hover effect from generic button */
+    box-shadow: none; /* Override hover effect from generic button */
+}
+
+.auth-form .google-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #DB4437; /* Google Red */
+}
+
+/* Styles for "or" separator */
+.separator {
+    text-align: center;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: var(--border-color);
+    margin: 0 15px;
+}
+
+/* Styles for form switching link */
+.form-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-switch a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-switch a:hover {
+    text-decoration: underline;
 }
