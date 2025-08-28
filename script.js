@@ -11,17 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: 'Dune: Part Two',
             description: 'Paul Atreides unites with Chani and the Fremen to lead a rebellion against those who destroyed his family.',
-            image: 'https://image.tmdb.org/t/p/original/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg'
+            image: 'https://image.tmdb.org/t/p/original/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg',
+            category: 'Action/Sci-Fi'
         },
         {
             title: 'Godzilla x Kong: The New Empire',
             description: 'The all-powerful Kong and the fearsome Godzilla unite their forces against a terrible threat.',
-            image: 'https://image.tmdb.org/t/p/original/v5XyXZe8FADw8iHupB4L7QOAwH9.jpg'
+            image: 'https://image.tmdb.org/t/p/original/v5XyXZe8FADw8iHupB4L7QOAwH9.jpg',
+            category: 'Action/Adventure'
         },
         {
             title: 'Kung Fu Panda 4',
             description: 'Po must find and train a new Dragon Warrior, but a wicked sorceress plans to re-summon all the villainous masters that Po has defeated.',
-            image: 'https://image.tmdb.org/t/p/original/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg'
+            image: 'https://image.tmdb.org/t/p/original/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg',
+            category: 'Animation/Family'
         }
     ];
 
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const slide = `
                 <div class="carousel-slide" style="background-image: url('${movie.image}');">
                     <div class="slide-content">
+                        <span class="genre-tag">${movie.category}</span>
                         <h1>${movie.title}</h1>
                         <p>${movie.description}</p>
                         <a href="#" class="watch-btn"><i class="fas fa-play"></i> watch now</a> 
