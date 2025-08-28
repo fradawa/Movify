@@ -1,16 +1,15 @@
-/* Importation de la police Montserrat pour un design moderne et épuré */
+/* Importing Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* ======================= STYLES DE BASE ET VARIABLES ======================= */
-/* Définition des variables de couleur et des polices pour une maintenance facile du thème. */
+/* ======================= BASE STYLES AND VARIABLES ======================= */
+/* Definition of color variables and fonts for easy theme maintenance. */
 :root {
-    /* Palette de couleurs modernes et cinématographiques */
-    --primary-gradient: linear-gradient(90deg, #f97316, #ea580c); /* Un dégradé orange vif pour les accents et les boutons principaux. */
-    --primary-color: #f97316; /* Couleur principale utilisée lorsque le dégradé n'est pas applicable. */
-    --dark-bg: #0c0c0c; /* Un fond noir profond pour une ambiance immersive, typique du cinéma. */
-    --light-text: #f5f5f5; /* Un texte blanc cassé pour une meilleure lisibilité sur fond sombre. */
-    --card-bg: #1a1a1a; /* Un gris foncé pour les cartes et les surfaces secondaires. */
-    --border-color: rgba(255, 255, 255, 0.1); /* Une couleur de bordure subtile pour délimiter les éléments. */
+    --primary-gradient: linear-gradient(90deg, #f97316, #ea580c);
+    --primary-color: #f97316; 
+    --dark-bg: #0c0c0c; 
+    --light-text: #f5f5f5; 
+    --card-bg: #1a1a1a; 
+    --border-color: rgba(255, 255, 255, 0.1); 
 }
 
 * {
@@ -20,27 +19,26 @@
 }
 
 body {
-    /* Application de la police Montserrat pour une cohérence typographique sur tout le site. */
     font-family: 'Montserrat', sans-serif;
     background-color: var(--dark-bg);
     color: var(--light-text);
-    /* Amélioration du rendu du texte pour une lisibilité accrue. */
+    /* text rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 /* ========================= SECTION 1: NAVBAR ========================= */
-/* La barre de navigation est conçue pour être superposée et semi-transparente, avec un effet de flou pour un look moderne. */
+
 .navbar {
-    background-color: rgba(12, 12, 12, 0.7); /* Fond semi-transparent */
+    background-color: rgba(12, 12, 12, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 20px 5%; /* Augmentation du padding pour une meilleure aération */
+    padding: 20px 5%;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color); /* Bordure subtile pour délimiter */
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-container {
@@ -51,55 +49,56 @@ body {
     margin: 0 auto;
 }
 
-/* Le logo utilise le dégradé principal pour attirer l'attention. */
+
 .navbar-logo {
-    font-size: 32px; /* Taille de police augmentée */
+    font-size: 32px;
     font-weight: 700;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
 }
 
-/* Les boutons de navigation sont stylisés pour être clairs et distincts. */
+
 .navbar-login {
     color: var(--light-text);
     text-decoration: none;
     font-weight: 500;
     margin-right: 20px;
     padding: 10px 20px;
-    border: 1px solid transparent; /* Bordure transparente initialement */
+    border: 1px solid transparent;
     border-radius: 25px;
     transition: all 0.3s ease;
 }
 
 .navbar-login:hover {
-    border-color: var(--primary-color); /* La bordure apparaît au survol */
+    border-color: var(--primary-color);
     color: #fff;
 }
 
 .navbar-signup {
-    background: var(--primary-gradient); /* Utilisation du dégradé pour le bouton d'inscription */
+    background: var(--primary-gradient);
     color: #fff;
     padding: 10px 30px;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: 600; /* Police plus grasse */
+    font-weight: 600;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
 }
 
 .navbar-signup:hover {
-    transform: translateY(-2px); /* Effet de lévitation au survol */
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
 }
 
-/* ================= SECTION 2: HERO AVEC CARROUSEL DE FILMS ================= */
+/* ================= SECTION 2: HERO WITH MOVIE CAROUSEL ================= */
 .hero-carousel {
     position: relative;
     width: 100%;
-    height: 90vh; /* Hauteur augmentée pour un impact visuel plus fort */
-    margin-top: 85px; /* Ajusté à la nouvelle hauteur de la navbar */
+    height: 90vh;
+    margin-top: 85px;
     overflow: hidden;
 }
 
@@ -122,7 +121,6 @@ body {
     background-position: center;
 }
 
-/* Le dégradé superposé est plus prononcé pour assurer la lisibilité du texte. */
 .carousel-slide::before {
     content: '';
     position: absolute;
@@ -138,16 +136,16 @@ body {
     z-index: 2;
     max-width: 50%;
     padding-left: 8%;
-    animation: fadeIn 1s ease-in-out; /* Animation d'apparition pour le contenu */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation for the content */
 }
 
-/* Ajout d'une animation simple pour le contenu du slide */
+/* animation for the slide content */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Style pour l'étiquette de genre, pour donner un contexte rapide sur le film. */
+/* Style for the genre tag */
 .genre-tag {
     display: inline-block;
     padding: 6px 15px;
@@ -161,24 +159,25 @@ body {
 }
 
 .slide-content h1 {
-    font-size: 3.8rem; /* Taille de police augmentée pour le titre */
+    font-size: 3.8rem; 
     font-weight: 700;
     margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Ombre portée pour la lisibilité */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .slide-content p {
     font-size: 1.1rem;
     margin-bottom: 30px;
-    max-width: 550px; /* Largeur maximale augmentée */
-    line-height: 1.6; /* Hauteur de ligne améliorée */
+    max-width: 550px; 
+    line-height: 1.6;
 }
 
-/* Le bouton "Regarder" est plus proéminent avec le dégradé et une icône. */
+/*Watch button. */
+
 .watch-btn {
     background: var(--primary-gradient);
     color: #fff;
-    padding: 15px 35px; /* Padding augmenté pour un plus gros bouton */
+    padding: 15px 35px; 
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
@@ -191,15 +190,16 @@ body {
 }
 
 .watch-btn i {
-    margin-right: 10px; /* Espace augmenté pour l'icône */
+    margin-right: 10px; 
     font-size: 1.2rem;
 }
 
 .watch-btn:hover {
-    transform: translateY(-3px) scale(1.05); /* Effet de zoom et de lévitation */
+    transform: translateY(-3px) scale(1.05); /* Zoom on hover effect */
     box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
 }
 
+/* arrows */
 .carousel-arrow {
     position: absolute;
     top: 50%;
@@ -228,95 +228,10 @@ body {
     border-radius: 0 50% 50% 0;
 }
 
-/* ==================== SECTION 3: CONTENU TENDANCE ==================== */
-.trending {
-    padding: 60px 5%;
-}
 
-.trending-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.trending h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.trending-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.movie-card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.movie-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
-}
-
-.movie-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.movie-card-info {
-    padding: 15px;
-}
-
-.movie-card-info h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.movie-card-info span {
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
-/* ========================== SECTION 4: FOOTER ========================== */
-.footer {
-    background-color: var(--card-bg);
-    padding: 40px 5%;
-    margin-top: 40px;
-}
-
-.footer-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.social-links a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* ======================== MODAL DE CONNEXION/INSCRIPTION ======================== */
-/* Le modal est assombri et flouté pour se concentrer sur le formulaire. */
+/* ======================== LOGIN/REGISTRATION MODAL ======================== */
 .modal {
-    display: none; /* Caché par défaut */
+    display: none; /* Hidden by default */
     position: fixed;
     z-index: 2000;
     left: 0;
@@ -324,20 +239,19 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond plus sombre */
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
 
-/* Le contenu du modal a un design épuré et moderne. */
 .modal-content {
     background: var(--card-bg);
     margin: 10% auto;
-    padding: 40px; /* Padding augmenté */
+    padding: 40px;
     border: 1px solid var(--border-color);
     width: 90%;
-    max-width: 450px; /* Largeur augmentée */
-    border-radius: 20px; /* Bordures plus arrondies */
+    max-width: 450px;
+    border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
@@ -348,14 +262,44 @@ body {
     top: 15px;
     right: 25px;
     font-size: 36px;
-    font-weight: normal; /* Police plus fine */
+    font-weight: normal;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .close-btn:hover, .close-btn:focus {
     color: #fff;
-    transform: rotate(90deg); /* Animation de rotation au survol */
+    transform: rotate(90deg);
+}
+
+
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    background-color: #0c0c0c;
+    border-radius: 30px;
+    padding: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.form-toggle button {
+    background: transparent;
+    border: none;
+    color: var(--light-text);
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    flex: 1;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.form-toggle button.active {
+    background: var(--primary-gradient);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
 }
 
 .auth-form h2 {
@@ -365,14 +309,13 @@ body {
     font-size: 1.8rem;
 }
 
-/* Les champs de saisie sont plus grands et plus clairs. */
 .auth-form input {
     width: 100%;
-    padding: 16px; /* Padding augmenté */
+    padding: 16px;
     margin-bottom: 20px;
-    background: #0c0c0c; /* Fond assorti au body */
+    background: #0c0c0c;
     border: 1px solid var(--border-color);
-    border-radius: 12px; /* Bordures plus arrondies */
+    border-radius: 12px;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
@@ -386,10 +329,9 @@ body {
 .auth-form input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2); /* Ombre de focus */
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
 }
 
-/* Le bouton de soumission utilise le dégradé et a des effets de survol améliorés. */
 .auth-form button {
     width: 100%;
     padding: 16px;
@@ -408,68 +350,4 @@ body {
 .auth-form button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
-}
-
-/* Styles for Google Button */
-.auth-form .google-btn {
-    background: #fff;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    padding: 14px;
-    font-size: 1rem;
-}
-
-.auth-form .google-btn:hover {
-    background-color: #f0f0f0;
-    transform: translateY(0); /* Override hover effect from generic button */
-    box-shadow: none; /* Override hover effect from generic button */
-}
-
-.auth-form .google-btn i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    color: #DB4437; /* Google Red */
-}
-
-/* Styles for "or" separator */
-.separator {
-    text-align: center;
-    margin: 20px 0;
-    color: rgba(255, 255, 255, 0.4);
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-}
-
-.separator::before,
-.separator::after {
-    content: '';
-    flex-grow: 1;
-    height: 1px;
-    background: var(--border-color);
-    margin: 0 15px;
-}
-
-/* Styles for form switching link */
-.form-switch {
-    text-align: center;
-    margin-top: 25px;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.form-switch a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.form-switch a:hover {
-    text-decoration: underline;
 }
