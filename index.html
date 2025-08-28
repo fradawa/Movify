@@ -31,31 +31,40 @@
         </section>
 
 
-    <!-- ======================== MODAL DE CONNEXION/INSCRIPTION ======================== -->
-    <div id="authModal" class="modal">
+    <!-- ======================== MODAL DE CONNEXION ======================== -->
+    <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <div class="form-container">
-                <div class="form-toggle">
-                    <button id="showLoginBtn" class="active">Connexion</button>
-                    <button id="showRegisterBtn">Inscription</button>
-                </div>
+            <form id="loginForm" class="auth-form">
+                <h2>Se connecter</h2>
+                <button type="button" class="google-btn">
+                    <i class="fab fa-google"></i> Se connecter avec Google
+                </button>
+                <div class="separator">ou</div>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">Connexion</button>
+                <p class="form-switch">Pas encore de compte ? <a href="#" id="showRegister">Inscrivez-vous</a></p>
+            </form>
+        </div>
+    </div>
 
-                <form id="loginForm" class="auth-form">
-                    <h2>Se connecter</h2>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Mot de passe" required>
-                    <button type="submit">Connexion</button>
-                </form>
-
-                <form id="registerForm" class="auth-form" style="display: none;">
-                    <h2>Créer un compte</h2>
-                    <input type="text" placeholder="Nom d'utilisateur" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Mot de passe" required>
-                    <button type="submit">S'inscrire</button>
-                </form>
-            </div>
+    <!-- ======================== MODAL D'INSCRIPTION ======================== -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="registerForm" class="auth-form">
+                <h2>Créer un compte</h2>
+                <button type="button" class="google-btn">
+                    <i class="fab fa-google"></i> S'inscrire avec Google
+                </button>
+                <div class="separator">ou</div>
+                <input type="text" placeholder="Nom d'utilisateur" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+                <p class="form-switch">Déjà un compte ? <a href="#" id="showLogin">Connectez-vous</a></p>
+            </form>
         </div>
     </div>
 

@@ -70,61 +70,65 @@ document.addEventListener('DOMContentLoaded', () => {
     createSlides();
 
 
-   // ==================== AUTHENTICATION MODAL LOGIC ==================== //
+    // ==================== AUTHENTICATION MODAL LOGIC ==================== //
 
-const modal = document.getElementById('authModal');
-const loginBtn = document.getElementById('loginBtn');
-const signupBtn = document.getElementById('signupBtn');
-const closeBtn = document.querySelector('.close-btn');
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
 
-const showLoginBtn = document.getElementById('showLoginBtn');
-const showRegisterBtn = document.getElementById('showRegisterBtn');
-const loginForm = document.getElementById('loginForm');
-const registerForm = document.getElementById('registerForm');
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
 
-// Function to display the login form
-const displayLoginForm = () => {
-    loginForm.style.display = 'block';
-    registerForm.style.display = 'none';
-    showLoginBtn.classList.add('active');
-    showRegisterBtn.classList.remove('active');
-};
+    const closeLoginBtn = loginModal.querySelector('.close-btn');
+    const closeRegisterBtn = registerModal.querySelector('.close-btn');
 
-// Function to display the registration form
-const displayRegisterForm = () => {
-    loginForm.style.display = 'none';
-    registerForm.style.display = 'block';
-    showRegisterBtn.classList.add('active');
-    showLoginBtn.classList.remove('active');
-};
+    const showRegisterLink = document.getElementById('showRegister');
+    const showLoginLink = document.getElementById('showLogin');
 
-// Opens the modal and displays the login form
-loginBtn.onclick = (e) => {
-    e.preventDefault();
-    modal.style.display = 'block';
-    displayLoginForm();
-}
+    // Function to open a modal
+    function openModal(modal) {
+        modal.style.display = 'block';
+    }
 
-// Opens the modal and displays the registration form
-signupBtn.onclick = (e) => {
-    e.preventDefault();
-    modal.style.display = 'block';
-    displayRegisterForm();
-}
-
-// Handles clicks on the toggle buttons
-showLoginBtn.onclick = displayLoginForm;
-showRegisterBtn.onclick = displayRegisterForm;
-
-// Closes the modal
-closeBtn.onclick = () => {
-    modal.style.display = 'none';
-}
-
-// Closes the modal if the user clicks outside of it
-window.onclick = (event) => {
-    if (event.target == modal) {
+    // Function to close a modal
+    function closeModal(modal) {
         modal.style.display = 'none';
     }
-}
+
+    // Event listeners for navbar buttons
+    loginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(loginModal);
+    });
+
+    signupBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(registerModal);
+    });
+
+    // Event listeners for close buttons
+    closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+    closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
+
+    // Event listeners for switching between modals
+    showRegisterLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(loginModal);
+        openModal(registerModal);
+    });
+
+    showLoginLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(registerModal);
+        openModal(loginModal);
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            closeModal(loginModal);
+        }
+        if (e.target === registerModal) {
+            closeModal(registerModal);
+        }
+    });
 });
