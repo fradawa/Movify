@@ -256,6 +256,110 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* Styles for the new split modal layout */
+.modal-content-split {
+    display: flex;
+    background: #fff; /* White background for the form side */
+    margin: 5% auto;
+    width: 90%;
+    max-width: 900px; /* Wider modal for two columns */
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden; /* Hide overflowing content */
+}
+
+/* Left side of the modal (form) */
+.modal-form-container {
+    flex: 1;
+    padding: 50px;
+    color: #333; /* Dark text for the form */
+}
+
+/* Right side of the modal (image) */
+.modal-image-container {
+    flex: 1;
+    background: url('https://i.imgur.com/Z8M3t2C.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Style for the form subtitle */
+.form-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Container for first and last name fields */
+.name-fields {
+    display: flex;
+    gap: 15px; /* Space between the fields */
+    margin-bottom: 20px;
+}
+
+.name-fields input {
+    width: 100%;
+    margin-bottom: 0; /* Remove bottom margin as it's handled by the container */
+}
+
+/* Specific adjustments for the form inside the split modal */
+.modal-form-container .auth-form h2 {
+    text-align: left;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.modal-form-container .auth-form input {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.modal-form-container .auth-form input:focus {
+    border-color: #f97316;
+    box-shadow: none;
+}
+
+.modal-form-container .auth-form button[type="submit"] {
+    background: #f97316;
+}
+
+.modal-form-container .google-btn {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-form-container .google-btn:hover {
+    background-color: #f7f7f7;
+}
+
+.modal-form-container .separator {
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+}
+
+.modal-form-container .form-switch {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.modal-form-container .form-switch a {
+    color: #f97316;
+    text-decoration: none;
+    font-weight: 600;
+}
+
 .close-btn {
     color: #aaa;
     position: absolute;

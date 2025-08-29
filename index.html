@@ -49,22 +49,43 @@
         </div>
     </div>
 
-    <!-- ======================== MODAL D'INSCRIPTION ======================== -->
+    <!-- ======================== SIGNUP MODAL ======================== -->
     <div id="registerModal" class="modal">
-        <div class="modal-content">
+        <!-- Modal content with two-column layout -->
+        <div class="modal-content-split">
             <span class="close-btn">&times;</span>
-            <form id="registerForm" class="auth-form">
-                <h2>Créer un compte</h2>
-                <button type="button" class="google-btn">
-                    <i class="fab fa-google"></i> S'inscrire avec Google
-                </button>
-                <div class="separator">ou</div>
-                <input type="text" placeholder="Nom d'utilisateur" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mot de passe" required>
-                <button type="submit">S'inscrire</button>
-                <p class="form-switch">Déjà un compte ? <a href="#" id="showLogin">Connectez-vous</a></p>
-            </form>
+            <!-- Left side: Form -->
+            <div class="modal-form-container">
+                <form id="registerForm" class="auth-form">
+                    <h2>Créez un compte gratuitement</h2>
+                    <p class="form-subtitle">Améliorez votre carrière grâce à des ressources reconnues par l'industrie.</p>
+                    
+                    <!-- Name fields container -->
+                    <div class="name-fields">
+                        <input type="text" placeholder="Prénom" required> <!-- First Name input -->
+                        <input type="text" placeholder="Nom" required>    <!-- Last Name input -->
+                    </div>
+                    
+                    <input type="email" placeholder="Adresse email" required> <!-- Email input -->
+                    <input type="password" placeholder="Mot de passe" required> <!-- Password input -->
+                    
+                    <button type="submit">Créer un compte</button> <!-- Submit button -->
+                    
+                    <div class="separator">Ou</div> <!-- Separator -->
+                    
+                    <!-- Google signup button -->
+                    <button type="button" class="google-btn">
+                        <i class="fab fa-google"></i> S'inscrire avec Google
+                    </button>
+                    
+                    <!-- Link to login form -->
+                    <p class="form-switch">Déjà un compte ? <a href="#" id="showLogin">Connectez-vous</a></p>
+                </form>
+            </div>
+            <!-- Right side: Image -->
+            <div class="modal-image-container">
+                <!-- The background image will be set via CSS -->
+            </div>
         </div>
     </div>
 
