@@ -361,18 +361,19 @@ body {
 }
 
 .close-btn {
-    color: #aaa;
+    color: #888; /* A darker grey for better visibility on white backgrounds */
     position: absolute;
     top: 15px;
     right: 25px;
     font-size: 36px;
     font-weight: normal;
     cursor: pointer;
+    z-index: 10; /* Ensure it's above the image */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .close-btn:hover, .close-btn:focus {
-    color: #fff;
+    color: #000; /* Black on hover for maximum visibility */
     transform: rotate(90deg);
 }
 
