@@ -87,11 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to open a modal
     function openModal(modal) {
         modal.style.display = 'block';
+        setTimeout(() => modal.classList.add('modal-visible'), 10);
     }
 
     // Function to close a modal
     function closeModal(modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('modal-visible');
+        setTimeout(() => modal.style.display = 'none', 300);
     }
 
     // Event listeners for navbar buttons

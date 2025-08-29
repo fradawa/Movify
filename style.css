@@ -242,21 +242,14 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.modal-content {
-    background: var(--card-bg);
-    margin: 10% auto;
-    padding: 40px;
-    border: 1px solid var(--border-color);
-    width: 90%;
-    max-width: 450px;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.modal.modal-visible {
+    opacity: 1;
 }
 
-/* Styles for the new split modal layout */
 .modal-content-split {
     display: flex;
     background: #fff; /* White background for the form side */
@@ -267,6 +260,12 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     overflow: hidden; /* Hide overflowing content */
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal.modal-visible .modal-content-split {
+    transform: scale(1);
 }
 
 /* Left side of the modal (form) */
@@ -309,13 +308,14 @@ body {
     font-weight: 700;
 }
 
-.modal-form-container .auth-form input {
+.modal-form-container .auth-form .animated-border input {
     background: #f7f7f7;
     border: 1px solid #ddd;
     color: #333;
+    margin-bottom: 0;
 }
 
-.modal-form-container .auth-form input:focus {
+.modal-form-container .auth-form .animated-border input:focus {
     border-color: #f97316;
     box-shadow: none;
 }
@@ -414,10 +414,10 @@ body {
     font-size: 1.8rem;
 }
 
-.auth-form input {
+.auth-form .animated-border input,
+.auth-form .animated-border button {
     width: 100%;
     padding: 16px;
-    margin-bottom: 20px;
     background: #0c0c0c;
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -425,29 +425,26 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0;
 }
 
-.auth-form input::placeholder {
+.auth-form .animated-border input::placeholder {
     color: rgba(255, 255, 255, 0.4);
 }
 
-.auth-form input:focus {
+.auth-form .animated-border input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
 }
 
-.auth-form button {
-    width: 100%;
-    padding: 16px;
+.auth-form .animated-border button {
     background: var(--primary-gradient);
     border: none;
-    border-radius: 12px;
-    color: #fff;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 20px rgba(249, 115, 22, 0.25);
 }
@@ -455,4 +452,44 @@ body {
 .auth-form button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+/* ======================= ANIMATED BORDER FOR INPUTS AND BUTTONS ======================= */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animated-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 50%,
+        var(--primary-color) 100%
+    );
+    animation: rotate 4s linear infinite;
+    z-index: 1;
+}
+
+.animated-border > * {
+    position: relative;
+    z-index: 2;
 }
