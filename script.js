@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to open a modal
     function openModal(modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
     }
 
     // Function to close a modal
     function closeModal(modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
     }
 
     // Event listeners for navbar buttons

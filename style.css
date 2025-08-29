@@ -230,19 +230,46 @@ body {
 
 
 /* ======================== LOGIN/REGISTRATION MODAL ======================== */
+@keyframes modal-show {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .modal {
-    display: none; /* Hidden by default */
+    display: flex; /* Changed to flex for centering */
+    align-items: center;
+    justify-content: center;
     position: fixed;
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+
+    /* Animation properties */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.show .modal-content-split {
+    animation: modal-show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 
 .modal-content {
     background: var(--card-bg);
@@ -260,13 +287,14 @@ body {
 .modal-content-split {
     display: flex;
     background: #fff; /* White background for the form side */
-    margin: 5% auto;
     width: 90%;
     max-width: 900px; /* Wider modal for two columns */
     border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     overflow: hidden; /* Hide overflowing content */
+    transform: scale(0.95); /* Initial state for animation */
+    opacity: 0;
 }
 
 /* Left side of the modal (form) */
@@ -435,6 +463,50 @@ body {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+/* ======================= ANIMATED BORDER FOR INPUTS AND BUTTONS ======================= */
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.auth-form .input-wrapper, .auth-form .button-wrapper {
+    position: relative;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.name-fields .input-wrapper {
+    margin-bottom: 0;
+}
+
+.auth-form .input-wrapper::before, .auth-form .button-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    border-radius: 14px;
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 20s linear infinite;
+}
+
+.auth-form .input-wrapper:hover::before, .auth-form .button-wrapper:hover::before {
+    opacity: 1;
+}
+
+.auth-form input, .auth-form button {
+    position: relative;
+    z-index: 1;
 }
 
 .auth-form button {
