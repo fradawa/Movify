@@ -487,15 +487,8 @@ body {
 .auth-form .input-wrapper::before, .auth-form .button-wrapper::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #ff0000, #ff7300);
-    background-size: 400%;
-    border-radius: 1px;
     z-index: -1;
-    filter: blur(5px);
+    filter: blur(3px);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     animation: glowing 20s linear infinite;
