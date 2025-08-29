@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* ======================= BASE STYLES AND VARIABLES ======================= */
-/* Definition of color variables and fonts for easy theme maintenance. */
+/*  color variables and fonts */
 :root {
     --primary-gradient: linear-gradient(90deg, #f97316, #ea580c);
     --primary-color: #f97316; 
@@ -279,7 +279,7 @@ body {
 /* Right side of the modal (image) */
 .modal-image-container {
     flex: 1;
-    background: url('https://i.imgur.com/Z8M3t2C.png') no-repeat center center;
+    background: url('img/form.png') no-repeat center center;
     background-size: cover;
 }
 
@@ -292,13 +292,13 @@ body {
 /* Container for first and last name fields */
 .name-fields {
     display: flex;
-    gap: 15px; /* Space between the fields */
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 .name-fields input {
     width: 100%;
-    margin-bottom: 0; /* Remove bottom margin as it's handled by the container */
+    margin-bottom: 0; 
 }
 
 /* Specific adjustments for the form inside the split modal */
@@ -361,19 +361,19 @@ body {
 }
 
 .close-btn {
-    color: #888; /* A darker grey for better visibility on white backgrounds */
+    color: #888; 
     position: absolute;
     top: 15px;
     right: 25px;
     font-size: 36px;
     font-weight: normal;
     cursor: pointer;
-    z-index: 10; /* Ensure it's above the image */
+    z-index: 10; 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .close-btn:hover, .close-btn:focus {
-    color: #000; /* Black on hover for maximum visibility */
+    color: #000; 
     transform: rotate(90deg);
 }
 
@@ -428,7 +428,7 @@ body {
 }
 
 .auth-form input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(105, 92, 92, 0.4);
 }
 
 .auth-form input:focus {
