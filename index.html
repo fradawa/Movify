@@ -33,19 +33,32 @@
 
     <!-- ======================== MODAL DE CONNEXION ======================== -->
     <div id="loginModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content-split">
             <span class="close-btn">&times;</span>
-            <form id="loginForm" class="auth-form">
-                <h2>Se connecter</h2>
-                <button type="button" class="google-btn">
-                    <i class="fab fa-google"></i> Se connecter avec Google
-                </button>
-                <div class="separator">ou</div>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Mot de passe" required>
-                <button type="submit">Connexion</button>
-                <p class="form-switch">Pas encore de compte ? <a href="#" id="showRegister">Inscrivez-vous</a></p>
-            </form>
+            <!-- Form side -->
+            <div class="modal-form-container">
+                <form id="loginForm" class="auth-form">
+                    <h2>Content de vous revoir</h2>
+                    <p class="form-subtitle">Connectez-vous pour accéder à votre compte.</p>
+
+                    <input type="email" placeholder="Adresse email" required>
+                    <input type="password" placeholder="Mot de passe" required>
+
+                    <button type="submit">Se connecter</button>
+
+                    <div class="separator">Ou</div>
+
+                    <button type="button" class="google-btn">
+                        <i class="fab fa-google"></i> Continuer avec Google
+                    </button>
+
+                    <p class="form-switch">Pas encore de compte ? <a href="#" id="showRegister">Inscrivez-vous</a></p>
+                </form>
+            </div>
+            <!-- Image side -->
+            <div class="modal-image-container">
+                <!-- Background image is set in CSS -->
+            </div>
         </div>
     </div>
 
