@@ -286,8 +286,8 @@ body {
 .modal-content-split {
     display: flex;
     background: #fff; /* White background for the form side */
-    width: 90%;
-    max-width: 900px; /* Wider modal for two columns */
+    width: 80%;
+    max-width: 800px; /* Wider modal for two columns */
     border-radius: 20px;
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
