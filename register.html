@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="auth.css">
 </head>
-<body>
+<body class="auth-page">
     <div class="auth-container">
-        <div class="modal-content netflix-style">
+        <div class="auth-form-container">
             <form id="registerForm" class="auth-form">
                 <h2>Sign Up</h2>
 
-                <input type="text" placeholder="First Name" required>
-                <input type="text" placeholder="Last Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
+                <div class="input-group">
+                    <input type="text" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
 
-                <button type="submit" class="login-submit-btn">Sign Up</button>
+                <button type="submit" class="auth-submit-btn">Sign Up</button>
 
-                <div class="signup-now">
+                <div class="auth-switch-link">
                     <p>Already have an account? <a href="login.html">Sign in now.</a></p>
                 </div>
             </form>
