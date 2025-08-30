@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="auth.css">
 </head>
-<body>
+<body class="auth-page">
     <div class="auth-container">
-        <div class="modal-content netflix-style">
+        <div class="auth-form-container">
             <form id="loginForm" class="auth-form">
                 <h2>Sign In</h2>
+
+
+                <div class="input-group">
+                    <input type="email" placeholder="Email or phone number" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
 
                 <button type="button" class="google-signin-btn">
                     <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo" class="google-logo">
@@ -25,7 +33,8 @@
                 <input type="email" placeholder="Email or phone number" required>
                 <input type="password" placeholder="Password" required>
 
-                <button type="submit" class="login-submit-btn">Sign In</button>
+
+                <button type="submit" class="auth-submit-btn">Sign In</button>
 
                 <div class="form-help">
                     <div class="remember-me">
@@ -35,7 +44,7 @@
                     <a href="#" class="need-help">Need help?</a>
                 </div>
 
-                <div class="signup-now">
+                <div class="auth-switch-link">
                     <p>New to Movify? <a href="register.html">Sign up now.</a></p>
                 </div>
                  <div class="recaptcha-notice">
