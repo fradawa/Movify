@@ -74,19 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loginModal = document.getElementById('loginModal');
     const registerModal = document.getElementById('registerModal');
-    const forgotPasswordModal = document.getElementById('forgotPasswordModal');
 
     const loginBtn = document.getElementById('loginBtn');
     const signupBtn = document.getElementById('signupBtn');
 
     const closeLoginBtn = loginModal.querySelector('.close-btn');
     const closeRegisterBtn = registerModal.querySelector('.close-btn');
-    const closeForgotPasswordBtn = forgotPasswordModal.querySelector('.close-btn');
 
     const showRegisterLink = document.getElementById('showRegister');
     const showLoginLink = document.getElementById('showLogin');
-    const showForgotPassword = document.getElementById('showForgotPassword');
-    const backToLoginFromForgot = document.getElementById('backToLoginFromForgot');
 
     // Function to open a modal
     function openModal(modal) {
@@ -112,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners for close buttons
     closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
     closeRegisterBtn.addEventListener('click', () => closeModal(registerModal));
-    closeForgotPasswordBtn.addEventListener('click', () => closeModal(forgotPasswordModal));
 
     // Event listeners for switching between modals
     showRegisterLink.addEventListener('click', (e) => {
@@ -127,18 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         openModal(loginModal);
     });
 
-    showForgotPassword.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeModal(loginModal);
-        openModal(forgotPasswordModal);
-    });
-
-    backToLoginFromForgot.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeModal(forgotPasswordModal);
-        openModal(loginModal);
-    });
-
     // Close modal when clicking outside of it
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
@@ -146,9 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (e.target === registerModal) {
             closeModal(registerModal);
-        }
-        if (e.target === forgotPasswordModal) {
-            closeModal(forgotPasswordModal);
         }
     });
 });
