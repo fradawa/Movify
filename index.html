@@ -33,87 +33,52 @@
 
     <!-- ======================== LOGIN MODAL======================== -->
     <div id="loginModal" class="modal">
-        <div class="modal-content-split">
+        <div class="modal-content netflix-style">
             <span class="close-btn">&times;</span>
-            <!-- Form side -->
-            <div class="modal-form-container">
-                <form id="loginForm" class="auth-form">
-                    <h2>Welcome back! Let's find your next favorite movie.</h2>
-                    <p class="form-subtitle">Log in to access your account.</p>
+            <form id="loginForm" class="auth-form">
+                <h2>Sign In</h2>
 
-                    <div class="input-wrapper">
-                        <input type="email" placeholder="email" required>
+                <input type="email" placeholder="Email or phone number" required>
+                <input type="password" placeholder="Password" required>
+
+                <button type="submit" class="login-submit-btn">Sign In</button>
+
+                <div class="form-help">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
                     </div>
-                    <div class="input-wrapper">
-                        <input type="password" placeholder="password" required>
-                    </div>
-                    <div class="button-wrapper">
-                        <button type="submit">Log in</button>
-                    </div>
+                    <a href="#" class="need-help">Need help?</a>
+                </div>
 
-                    <div class="separator">Or</div>
-
-                    <button type="button" class="google-btn">
-                        <i class="fab fa-google"></i> Continue with Google
-                    </button>
-
-                    <p class="form-switch">Don't have an account yet? <a href="#" id="showRegister">Sign up</a></p>
-                </form>
-            </div>
-            <!-- Image side -->
-            <div class="modal-image-container">
-                <!-- Background image is set in CSS -->
-            </div>
+                <div class="signup-now">
+                    <p>New to Movify? <a href="#" id="showRegister">Sign up now.</a></p>
+                </div>
+                 <div class="recaptcha-notice">
+                    <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a></p>
+                </div>
+            </form>
         </div>
     </div>
 
     <!-- ======================== SIGNUP MODAL ======================== -->
     <div id="registerModal" class="modal">
-        <!-- Modal content with two-column layout -->
-        <div class="modal-content-split">
+        <div class="modal-content netflix-style">
             <span class="close-btn">&times;</span>
-            <!-- Left side: Form -->
-            <div class="modal-form-container">
-                <form id="registerForm" class="auth-form">
-                    <h2>Create an account for free</h2>
-                    <p class="form-subtitle">Your next favorite movie is waiting. Sign up and start watching.</p>
-                    
-                    <!-- Name fields container -->
-                    <div class="name-fields">
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="first name" required> <!-- First Name input -->
-                        </div>
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="second name" required>    <!-- Last Name input -->
-                        </div>
-                    </div>
-                    
-                    <div class="input-wrapper">
-                        <input type="email" placeholder="email" required> <!-- Email input -->
-                    </div>
-                    <div class="input-wrapper">
-                        <input type="password" placeholder="password" required> <!-- Password input -->
-                    </div>
-                    
-                    <div class="button-wrapper">
-                        <button type="submit">Create an account</button> <!-- Submit button -->
-                    </div>
-                    
-                    <div class="separator">or</div> <!-- Separator -->
-                    
-                    <!-- Google signup button -->
-                    <button type="button" class="google-btn">
-                        <i class="fab fa-google"></i> Sign in with Google
-                    </button>
-                    
-                    <!-- Link to login form -->
-                    <p class="form-switch">Already have an account? <a href="#" id="showLogin">Log in</a></p>
-                </form>
-            </div>
-            <!-- Right side: Image -->
-            <div class="modal-image-container">
-                <!-- The background image will be set via CSS -->
-            </div>
+            <form id="registerForm" class="auth-form">
+                <h2>Sign Up</h2>
+
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+
+                <button type="submit" class="login-submit-btn">Sign Up</button>
+
+                <div class="signup-now">
+                    <p>Already have an account? <a href="#" id="showLogin">Sign in now.</a></p>
+                </div>
+            </form>
         </div>
     </div>
 
