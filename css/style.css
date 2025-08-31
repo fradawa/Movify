@@ -253,6 +253,9 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border: 1px solid var(--border-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .movie-card:hover {
@@ -270,9 +273,21 @@ body {
     font-size: 1rem;
     padding: 15px 10px;
     font-weight: 500;
+    height: 3em;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie-card-link {
     text-decoration: none;
     color: inherit;
+    display: flex;
 }
