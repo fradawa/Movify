@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
 
     // Movie data for the carousel
-    //movies the figure here are the as the ones in the trending section
+    //movies that figure here are the same as the ones in the trending section
     const movies = [
         {
             title: 'Dune: Part Two',
