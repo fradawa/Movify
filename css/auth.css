@@ -57,8 +57,7 @@ body.auth-page {
 }
 
 .auth-form input[type="email"],
-.auth-form input[type="password"],
-.auth-form input[type="text"] {
+.auth-form input[type="password"] {
     background: #1f1f1f;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -101,25 +100,6 @@ body.auth-page {
     box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
 }
 
-.auth-form .form-help {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    color: #b3b3b3;
-    margin-top: 15px;
-}
-
-.auth-form .remember-me {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.auth-form .remember-me label {
-    margin: 0;
-    cursor: pointer;
-}
 
 .auth-form a {
     color: #b3b3b3;
@@ -140,17 +120,6 @@ body.auth-page {
 .auth-form .auth-switch-link a {
     color: var(--light-text);
     font-weight: 600;
-}
-
-.auth-form .recaptcha-notice {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    color: #8c8c8c;
-    line-height: 1.5;
-}
-
-.auth-form .recaptcha-notice a {
-    color: #0071eb; /* Keeping this blue for Google's branding */
 }
 
 .google-signin-btn {
