@@ -68,4 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // To initialize the carousel
     createSlides();
+
+    // ==================== Trending Movies Logic ==================== //
+
+    const moviesGrid = document.getElementById('movies-grid');
+
+    // Function to create and inject movie cards
+    function createMovieCards() {
+        movies.forEach(movie => {
+            const movieCard = `
+                <div class="movie-card">
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <h3>${movie.title}</h3>
+                </div>
+            `;
+            moviesGrid.innerHTML += movieCard;
+        });
+    }
+
+    // To initialize the movie cards
+    createMovieCards();
 });
