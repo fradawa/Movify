@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             carouselContainer.innerHTML += slide;
         });
     }
-    //replace # by the link of the movie 
 
     // Function to move the carousel
     function moveCarousel() {
