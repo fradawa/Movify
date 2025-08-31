@@ -271,3 +271,8 @@ body {
     padding: 15px 10px;
     font-weight: 500;
 }
+
+.movie-card-link {
+    text-decoration: none;
+    color: inherit;
+}
