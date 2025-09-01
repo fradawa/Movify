@@ -291,3 +291,39 @@ body {
     color: inherit;
     display: flex;
 }
+
+/* ========================= SECTION 4: FOOTER ========================= */
+
+.site-footer {
+    background-color: var(--dark-bg);
+    padding: 40px 8%;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-media a {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(245, 245, 245, 0.7);
+}
