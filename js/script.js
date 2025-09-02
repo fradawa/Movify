@@ -72,6 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // To initialize the carousel
     createSlides();
 
+    // Automatically scroll the carousel every 3 seconds
+    setInterval(() => {
+        nextBtn.click();
+    }, 3000);
+
     // ==================== Trending Movies Logic ==================== //
 
     const moviesGrid = document.getElementById('movies-grid');
