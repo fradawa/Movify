@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevBtn');
 
     // Movie data for the carousel
-    //movies that figure here are the same as the ones in the trending section
     const movies = [
         {
             id: 1,
@@ -32,12 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    let currentIndex = 0;
+    let currentIndex = 1; // Start at the first real slide
+    let isTransitioning = false;
 
-    // Function to create and inject carousel slides.
+    // Create slides with clones for infinite loop
     function createSlides() {
-        carouselContainer.innerHTML = ''; // To empty the container
-        movies.forEach(movie => {
+        const slides = [movies[movies.length - 1], ...movies, movies[0]]; // Clones
+        carouselContainer.innerHTML = '';
+        slides.forEach(movie => {
             const slide = `
                 <div class="carousel-slide" style="background-image: url('${movie.image}');">
                     <div class="slide-content">
@@ -53,29 +54,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to move the carousel
-    function moveCarousel() {
+    function moveCarousel(withTransition = true) {
+        if (withTransition) {
+            carouselContainer.style.transition = 'transform 0.5s ease-in-out';
+        } else {
+            carouselContainer.style.transition = 'none';
+        }
         const offset = -currentIndex * 100;
         carouselContainer.style.transform = `translateX(${offset}%)`;
     }
 
+    // Handle infinite loop transition
+    carouselContainer.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        if (currentIndex === 0) { // After transitioning to the cloned last slide
+            currentIndex = movies.length;
+            moveCarousel(false);
+        } else if (currentIndex === movies.length + 1) { // After transitioning to the cloned first slide
+            currentIndex = 1;
+            moveCarousel(false);
+        }
+    });
+
     // Event listeners for the arrows
     nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % movies.length;
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex++;
         moveCarousel();
     });
 
     prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + movies.length) % movies.length;
+        if (isTransitioning) return;
+        isTransitioning = true;
+        currentIndex--;
         moveCarousel();
     });
 
-    // To initialize the carousel
+    // Initialize the carousel
     createSlides();
+    moveCarousel(false); // Set initial position without transition
 
     // Automatically scroll the carousel every 3 seconds
     setInterval(() => {
         nextBtn.click();
     }, 3000);
+
 
     // ==================== Trending Movies Logic ==================== //
 
